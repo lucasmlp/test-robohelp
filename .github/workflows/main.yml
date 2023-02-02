@@ -24,6 +24,10 @@ jobs:
         id: checkout
         uses: actions/checkout@v2
 
+      - name: Make output directory
+        id: make
+        run: mkdir ${{ env.OUTPUT_PATH }}
+
       - name: Build
         id: build
         run: >
