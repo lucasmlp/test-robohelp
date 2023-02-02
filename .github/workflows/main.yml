@@ -9,7 +9,7 @@ on:
       - master
 
 env:
-  ROBOHELP_PATH: 'C:\Program Files\Adobe\Adobe RoboHelp 2020\RoboHelp.exe'
+  ROBOHELP_PATH: 'C:\Program Files\Adobe\Adobe RoboHelp\RoboHelp.exe'
   PROJECT_PATH: '${{ github.workspace }}\test.rhpj'
   OUTPUT_PATH: 'C:\output'
   OUTPUT_PRESET: 'Responsive HTML 5'
