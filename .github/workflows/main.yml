@@ -30,6 +30,7 @@ jobs:
 
       - name: Build
         id: build
+        timeout-minutes: 1 # Times out after 1 minute
         run: >
           & "C:\Program Files\Adobe\Adobe RoboHelp 2020\RoboHelp.exe" --cl "C:\Windows\System32\actions-runner\_work\test-robohelp\test-robohelp\test.rhpj" -o "Responsive HTML 5"
 
