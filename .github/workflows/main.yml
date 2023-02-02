@@ -9,6 +9,7 @@ on:
       - master
 
 env:
+  ROBOHELP_PATH: 'C:\Program Files\Adobe\Adobe RoboHelp 2020\RoboHelp.exe'
   PROJECT_PATH: '${{ github.workspace }}\test.rhp'
   OUTPUT_PATH: '${{ github.workspace }}\output'
   OUTPUT_PRESET: 'Responsive HTML5'
@@ -26,7 +27,7 @@ jobs:
       - name: Build
         id: build
         run: >
-          robohelp
+          & "${{ env.ROBOHELP_PATH }}"
           --cl "${{ env.PROJECT_PATH }}"
           -o "${{ env.OUTPUT_PRESET }}"	
           -p "${{ env.OUTPUT_PATH }}"
