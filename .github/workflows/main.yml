@@ -31,7 +31,7 @@ jobs:
       - name: Build
         id: build
         run: >
-          & "C:\Program Files\Adobe\Adobe RoboHelp 2020\RoboHelp.exe" --cl "C:\Windows\System32\actions-runner\_work\test-robohelp\test-robohelp\test.rhpj" -o "Responsive HTML 5" -p "C:\Windows\System32\actions-runner\"
+          & "C:\Program Files\Adobe\Adobe RoboHelp 2020\RoboHelp.exe" --cl "C:\Windows\System32\actions-runner\_work\test-robohelp\test-robohelp\test.rhpj" -o "Responsive HTML 5"
 
       - name: Check Output
         id: check
