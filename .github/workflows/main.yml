@@ -24,12 +24,12 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build
-      id: build
-      run: >
-        robohelp
-        --cl "${{ env.PROJECT_PATH }}"
-        -o "${{ env.OUTPUT_PRESET }}"	
-        -p "${{ env.OUTPUT_PATH }}"
+        id: build
+        run: >
+          robohelp
+          --cl "${{ env.PROJECT_PATH }}"
+          -o "${{ env.OUTPUT_PRESET }}"	
+          -p "${{ env.OUTPUT_PATH }}"
 
       - name: Check Output
         id: check
