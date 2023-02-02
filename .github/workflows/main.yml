@@ -1,0 +1,36 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+env:
+  PROJECT_PATH: '${{ github.workspace }}\test.rhp'
+  OUTPUT_PATH: '${{ github.workspace }}\output'
+  OUTPUT_PRESET: 'Responsive HTML5'
+
+jobs:
+  build:
+   runs-on: self-hosted
+   timeout-minutes: 5
+   steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Build
+      id: build
+      run: >
+        robohelp
+        --cl "${{ env.PROJECT_PATH }}"
+        -o "${{ env.OUTPUT_PRESET }}"	
+        -p "${{ env.OUTPUT_PATH }}"
+
+      - name: Check Output
+        id: check
+        run: >
+          ls ${{ env.OUTPUT_PATH }}
