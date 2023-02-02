@@ -11,7 +11,7 @@ on:
 env:
   ROBOHELP_PATH: 'C:\Program Files\Adobe\Adobe RoboHelp 2020\RoboHelp.exe'
   PROJECT_PATH: '${{ github.workspace }}\test.rhpj'
-  OUTPUT_PATH: '${{ github.workspace }}\output'
+  OUTPUT_PATH: 'C:\output'
   OUTPUT_PRESET: 'Responsive HTML 5'
 
 jobs:
@@ -30,9 +30,11 @@ jobs:
 
       - name: Build
         id: build
-        timeout-minutes: 1 # Times out after 1 minute
         run: >
-          & "C:\Program Files\Adobe\Adobe RoboHelp 2020\RoboHelp.exe" --cl "C:\Windows\System32\actions-runner\_work\test-robohelp\test-robohelp\test.rhpj" -o "Responsive HTML 5"
+          & "${{ env.ROBOHELP_PATH }}"
+          --cl "${{ env.PROJECT_PATH }}"
+          -p "${{ env.OUTPUT_PATH }}"
+          -o "${{ env.OUTPUT_PRESET }}"
 
       - name: Check Output
         id: check
