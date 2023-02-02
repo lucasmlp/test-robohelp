@@ -12,7 +12,7 @@ env:
   ROBOHELP_PATH: 'C:\Program Files\Adobe\Adobe RoboHelp 2020\RoboHelp.exe'
   PROJECT_PATH: '${{ github.workspace }}\test.rhpj'
   OUTPUT_PATH: '${{ github.workspace }}\output'
-  OUTPUT_PRESET: 'Responsive HTML5'
+  OUTPUT_PRESET: 'Responsive HTML 5'
 
 jobs:
   build:
