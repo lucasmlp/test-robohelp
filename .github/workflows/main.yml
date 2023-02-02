@@ -15,9 +15,10 @@ env:
 
 jobs:
   build:
-   runs-on: self-hosted
-   timeout-minutes: 5
-   steps:
+    name: Build
+    runs-on: self-hosted
+    timeout-minutes: 5
+    steps:
       - name: Checkout
         id: checkout
         uses: actions/checkout@v2
